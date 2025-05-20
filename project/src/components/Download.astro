@@ -1,0 +1,350 @@
+---
+
+---
+
+<section id="download" class="section download-section">
+  <div class="container">
+    <div class="download-content">
+      <h2>
+        <span class="text-gradient">Download Flametracer</span>
+        <span class="subtitle">Available for Android devices</span>
+      </h2>
+
+      <div class="download-options">
+        <div class="download-card fade-in">
+          <div class="download-platform">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="40"
+              height="40"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+              <line x1="12" y1="18" x2="12" y2="18"></line>
+            </svg>
+            <div class="platform-info">
+              <h3>Android APK</h3>
+              <p>Direct download (.apk)</p>
+            </div>
+          </div>
+
+          <div class="download-actions">
+            <a href="/assets/flametracer.apk" class="btn btn-primary" download>
+              Download APK
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="download-card fade-in" data-delay="100">
+          <div class="download-platform">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="40"
+              height="40"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+              <polyline points="9 22 9 12 15 12 15 22"></polyline>
+            </svg>
+            <div class="platform-info">
+              <h3>Google Play</h3>
+              <p>Coming soon</p>
+            </div>
+          </div>
+
+          <div class="download-actions">
+            <button class="btn btn-secondary" disabled> Available Soon </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="installation-guide">
+        <h3>Installation Guide</h3>
+
+        <ol class="installation-steps">
+          <li class="fade-in" data-delay="200">
+            <span class="step-number">1</span>
+            <div class="step-content">
+              <h4>Download the APK</h4>
+              <p>
+                Click the download button above to get the Flametracer APK file.
+              </p>
+            </div>
+          </li>
+
+          <li class="fade-in" data-delay="300">
+            <span class="step-number">2</span>
+            <div class="step-content">
+              <h4>Allow Unknown Sources</h4>
+              <p>
+                Go to Settings → Security → Enable "Unknown Sources" to allow
+                installation of apps from sources other than the Play Store.
+              </p>
+            </div>
+          </li>
+
+          <li class="fade-in" data-delay="400">
+            <span class="step-number">3</span>
+            <div class="step-content">
+              <h4>Install the App</h4>
+              <p>
+                Open the downloaded APK file and tap "Install" when prompted.
+              </p>
+            </div>
+          </li>
+
+          <li class="fade-in" data-delay="500">
+            <span class="step-number">4</span>
+            <div class="step-content">
+              <h4>Launch Flametracer</h4>
+              <p>
+                Once installation is complete, open the app and start creating
+                amazing flame effects!
+              </p>
+            </div>
+          </li>
+        </ol>
+      </div>
+
+      <div class="system-requirements fade-in" data-delay="600">
+        <h3>System Requirements</h3>
+        <ul class="requirements-list">
+          <li>Android 8.0 or higher</li>
+          <li>2GB RAM minimum (4GB recommended)</li>
+          <li>500MB free storage space</li>
+          <li>OpenGL ES 3.0 compatible GPU</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .download-section {
+    background-color: var(--color-background-dark);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .download-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(
+      circle at center,
+      rgba(249, 115, 22, 0.2),
+      transparent 70%
+    );
+    z-index: 0;
+    transform: translateX(-50%);
+  }
+
+  .download-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .download-content h2 {
+    text-align: center;
+    margin-bottom: var(--space-6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .subtitle {
+    font-size: 1.125rem;
+    font-weight: 400;
+    color: var(--color-text-secondary);
+    margin-top: var(--space-1);
+  }
+
+  .download-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-3);
+    margin-bottom: var(--space-6);
+  }
+
+  .download-card {
+    background: rgba(30, 30, 30, 0.5);
+    backdrop-filter: blur(10px);
+    border-radius: var(--border-radius-md);
+    padding: var(--space-3);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition:
+      transform var(--transition-fast),
+      box-shadow var(--transition-fast);
+  }
+
+  .download-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(239, 68, 68, 0.2);
+  }
+
+  .download-platform {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+  }
+
+  .download-platform svg {
+    color: var(--color-primary-400);
+  }
+
+  .platform-info h3 {
+    margin: 0;
+    font-size: 1.25rem;
+  }
+
+  .platform-info p {
+    color: var(--color-text-secondary);
+    margin: 0;
+    font-size: 0.875rem;
+  }
+
+  .download-actions {
+    margin-top: auto;
+  }
+
+  .download-actions .btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-1);
+  }
+
+  .installation-guide {
+    margin-top: var(--space-6);
+  }
+
+  .installation-guide h3 {
+    text-align: center;
+    margin-bottom: var(--space-4);
+  }
+
+  .installation-steps {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .installation-steps li {
+    display: flex;
+    gap: var(--space-3);
+    background: rgba(30, 30, 30, 0.3);
+    border-radius: var(--border-radius-md);
+    padding: var(--space-3);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: transform var(--transition-fast);
+  }
+
+  .installation-steps li:hover {
+    transform: translateX(5px);
+  }
+
+  .step-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(
+      135deg,
+      var(--color-primary-600),
+      var(--color-secondary-700)
+    );
+    border-radius: 50%;
+    font-weight: 700;
+    font-size: 1.125rem;
+    flex-shrink: 0;
+  }
+
+  .step-content {
+    flex-grow: 1;
+  }
+
+  .step-content h4 {
+    margin: 0 0 var(--space-1);
+    font-size: 1.125rem;
+  }
+
+  .step-content p {
+    color: var(--color-text-secondary);
+    margin: 0;
+    font-size: 0.9375rem;
+  }
+
+  .system-requirements {
+    margin-top: var(--space-6);
+    background: rgba(30, 30, 30, 0.3);
+    border-radius: var(--border-radius-md);
+    padding: var(--space-3);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .system-requirements h3 {
+    margin: 0 0 var(--space-2);
+    font-size: 1.25rem;
+  }
+
+  .requirements-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--space-2);
+    padding-left: var(--space-3);
+  }
+
+  .requirements-list li {
+    color: var(--color-text-secondary);
+  }
+
+  @media (max-width: 768px) {
+    .installation-steps li {
+      flex-direction: column;
+      gap: var(--space-2);
+      align-items: flex-start;
+    }
+
+    .requirements-list {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

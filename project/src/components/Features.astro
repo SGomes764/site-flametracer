@@ -1,0 +1,267 @@
+---
+const features = [
+  {
+    title: "Real-Time Flame Simulation",
+    description:
+      "Experience physically accurate fire physics that respond to your environment in real-time.",
+    icon: "🔥",
+  },
+  {
+    title: "Customizable Effects",
+    description:
+      "Adjust color, intensity, size, and behavior of flames with intuitive controls.",
+    icon: "🎨",
+  },
+  {
+    title: "Multiple Fire Types",
+    description:
+      "Choose from campfires, torches, explosions, and more specialized flame effects.",
+    icon: "🧪",
+  },
+  {
+    title: "AR Integration",
+    description:
+      "Place flames in your real environment using augmented reality technology.",
+    icon: "📱",
+  },
+];
+---
+
+<section id="features" class="section features-section">
+  <div class="container">
+    <h2 class="section-title">
+      <span class="text-gradient">Powerful Features</span>
+      <span class="subtitle">Discover what makes Flametracer special</span>
+    </h2>
+
+    <div class="features-grid">
+      {
+        features.map((feature, index) => (
+          <div class="feature-card fade-in" data-delay={index * 100}>
+            <div class="feature-icon">{feature.icon}</div>
+            <h3>{feature.title}</h3>
+            <p>{feature.description}</p>
+          </div>
+        ))
+      }
+    </div>
+
+    <div class="feature-showcase">
+      <div class="feature-showcase-content">
+        <h3>Advanced Physics Engine</h3>
+        <p>
+          Our proprietary physics engine simulates the complex behavior of fire
+          with unprecedented realism. Watch as flames react to wind, obstacles,
+          and other environmental factors just like real fire.
+        </p>
+        <ul class="feature-list">
+          <li>Realistic flame movement and particle effects</li>
+          <li>Dynamic light casting and shadow simulation</li>
+          <li>Environmental interaction with physical objects</li>
+          <li>Optimized performance for mobile devices</li>
+        </ul>
+      </div>
+
+      <div class="feature-showcase-image">
+        <img
+          src="https://images.pexels.com/photos/1074505/pexels-photo-1074505.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+          alt="Advanced Physics Demo"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Fade-in animation on scroll
+  const observerOptions = {
+    threshold: 0.2,
+    rootMargin: "0px 0px -50px 0px",
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const delay = entry.target.dataset.delay || 0;
+        setTimeout(() => {
+          entry.target.classList.add("visible");
+        }, delay);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll(".fade-in").forEach((el) => {
+    observer.observe(el);
+  });
+</script>
+
+<style>
+  .features-section {
+    background-color: var(--color-background-dark);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .features-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(
+      circle at 80% 20%,
+      rgba(239, 68, 68, 0.15),
+      transparent 60%
+    );
+    z-index: 0;
+  }
+
+  .section-title {
+    text-align: center;
+    margin-bottom: var(--space-6);
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .subtitle {
+    font-size: 1.125rem;
+    font-weight: 400;
+    color: var(--color-text-secondary);
+    margin-top: var(--space-1);
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-4);
+    margin-bottom: var(--space-7);
+    position: relative;
+    z-index: 1;
+  }
+
+  .feature-card {
+    background: rgba(30, 30, 30, 0.5);
+    backdrop-filter: blur(10px);
+    border-radius: var(--border-radius-md);
+    padding: var(--space-3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition:
+      transform var(--transition-fast),
+      box-shadow var(--transition-fast);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    position: relative;
+    z-index: 1;
+    height: 100%;
+  }
+
+  .feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(239, 68, 68, 0.2);
+  }
+
+  .feature-icon {
+    font-size: 2.5rem;
+    margin-bottom: var(--space-2);
+    filter: drop-shadow(0 0 10px rgba(249, 115, 22, 0.5));
+  }
+
+  .feature-card h3 {
+    margin-bottom: var(--space-1);
+    color: var(--color-text-primary);
+  }
+
+  .feature-card p {
+    color: var(--color-text-secondary);
+    margin-bottom: 0;
+  }
+
+  .feature-showcase {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-5);
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    margin-top: var(--space-6);
+  }
+
+  .feature-showcase-content {
+    padding-right: var(--space-4);
+  }
+
+  .feature-showcase-content h3 {
+    margin-bottom: var(--space-2);
+    font-size: 1.75rem;
+  }
+
+  .feature-showcase-content p {
+    margin-bottom: var(--space-3);
+    color: var(--color-text-secondary);
+  }
+
+  .feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .feature-list li {
+    position: relative;
+    padding-left: var(--space-3);
+    margin-bottom: var(--space-1);
+    color: var(--color-text-secondary);
+  }
+
+  .feature-list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: linear-gradient(
+      135deg,
+      var(--color-primary-500),
+      var(--color-secondary-500)
+    );
+  }
+
+  .feature-showcase-image img {
+    width: 100%;
+    border-radius: var(--border-radius-lg);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    transition: transform var(--transition-medium);
+  }
+
+  .feature-showcase-image img:hover {
+    transform: scale(1.02);
+  }
+
+  @media (max-width: 992px) {
+    .feature-showcase {
+      grid-template-columns: 1fr;
+      gap: var(--space-4);
+    }
+
+    .feature-showcase-content {
+      padding-right: 0;
+      order: 1;
+    }
+
+    .feature-showcase-image {
+      order: 0;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .features-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -1,0 +1,217 @@
+---
+
+---
+
+<header class="header">
+  <div class="container header-container">
+    <a href="/" class="logo">
+      <img src="/assets/favicon.svg" alt="Flametracer" width="40" height="40" />
+      <span>Flametracer</span>
+    </a>
+
+    <nav class="nav">
+      <ul class="nav-list">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#download">Download</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <button class="nav-toggle" aria-label="Toggle navigation menu">
+        <span class="hamburger"></span>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<script>
+  // Toggle mobile navigation
+  const navToggle = document.querySelector(".nav-toggle");
+  const navList = document.querySelector(".nav-list");
+
+  navToggle?.addEventListener("click", () => {
+    navList?.classList.toggle("nav-active");
+    navToggle.classList.toggle("active");
+  });
+
+  // Handle header background on scroll
+  const header = document.querySelector(".header");
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 50) {
+      header?.classList.add("header-scrolled");
+    } else {
+      header?.classList.remove("header-scrolled");
+    }
+  });
+
+  // Close mobile nav when clicking on links
+  const navLinks = document.querySelectorAll(".nav-list a");
+
+  navLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      navList?.classList.remove("nav-active");
+      navToggle?.classList.remove("active");
+    });
+  });
+</script>
+
+<style>
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: var(--space-2) 0;
+    transition:
+      background-color var(--transition-medium),
+      padding var(--transition-medium);
+  }
+
+  .header-scrolled {
+    background-color: rgba(15, 15, 15, 0.9);
+    backdrop-filter: blur(10px);
+    padding: var(--space-1) 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  }
+
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+    color: var(--color-text-primary);
+    font-weight: 700;
+    font-size: 1.5rem;
+    text-decoration: none;
+  }
+
+  .logo img {
+    transition: transform var(--transition-fast);
+  }
+
+  .logo:hover img {
+    transform: rotate(10deg);
+  }
+
+  .nav-list {
+    display: flex;
+    gap: var(--space-3);
+    list-style: none;
+  }
+
+  .nav-list a {
+    color: var(--color-text-primary);
+    font-weight: 500;
+    text-decoration: none;
+    transition: color var(--transition-fast);
+    position: relative;
+  }
+
+  .nav-list a::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(
+      135deg,
+      var(--color-primary-500),
+      var(--color-secondary-500)
+    );
+    transition: width var(--transition-fast);
+  }
+
+  .nav-list a:hover {
+    color: var(--color-primary-400);
+  }
+
+  .nav-list a:hover::after {
+    width: 100%;
+  }
+
+  .nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .hamburger {
+    display: block;
+    position: relative;
+    width: 24px;
+    height: 2px;
+    background-color: var(--color-text-primary);
+    transition: background-color var(--transition-fast);
+  }
+
+  .hamburger::before,
+  .hamburger::after {
+    content: "";
+    position: absolute;
+    width: 24px;
+    height: 2px;
+    background-color: var(--color-text-primary);
+    transition: transform var(--transition-fast);
+  }
+
+  .hamburger::before {
+    top: -8px;
+  }
+
+  .hamburger::after {
+    bottom: -8px;
+  }
+
+  .nav-toggle.active .hamburger {
+    background-color: transparent;
+  }
+
+  .nav-toggle.active .hamburger::before {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .nav-toggle.active .hamburger::after {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  @media (max-width: 768px) {
+    .nav-toggle {
+      display: block;
+      z-index: 1001;
+    }
+
+    .nav-list {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 80%;
+      max-width: 300px;
+      height: 100vh;
+      background-color: var(--color-background-dark);
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transition: right var(--transition-medium);
+      z-index: 1000;
+      gap: var(--space-4);
+      box-shadow: -5px 0 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .nav-list a {
+      font-size: 1.25rem;
+    }
+
+    .nav-active {
+      right: 0;
+    }
+  }
+</style>
