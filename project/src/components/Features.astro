@@ -1,28 +1,28 @@
 ---
 const features = [
   {
-    title: "Real-Time Flame Simulation",
+    title: " Incêndios em Tempo Real",
     description:
-      "Experience physically accurate fire physics that respond to your environment in real-time.",
+      "Recebe informações atualizadas sobre incêndios ativos com dados oficiais e localização precisa no mapa.",
     icon: "🔥",
   },
   {
-    title: "Customizable Effects",
+    title: "Alertas por Localização",
     description:
-      "Adjust color, intensity, size, and behavior of flames with intuitive controls.",
-    icon: "🎨",
+      "Ativa notificações para seres avisado imediatamente quando há incêndios perto da tua área ou localizações marcadas.",
+    icon: "📍",
   },
   {
-    title: "Multiple Fire Types",
+    title: "Mapa Interativo",
     description:
-      "Choose from campfires, torches, explosions, and more specialized flame effects.",
-    icon: "🧪",
+      "Explora um mapa dinâmico com zonas de risco, áreas afetadas, estado do fogo e recursos de proteção civil.",
+    icon: "🗺️",
   },
   {
-    title: "AR Integration",
+    title: "Histórico e Estatísticas",
     description:
-      "Place flames in your real environment using augmented reality technology.",
-    icon: "📱",
+      "Consulta os dados dos incêndios passados, com gráficos de evolução, causas prováveis e áreas ardidas.",
+    icon: "📊",
   },
 ];
 ---
@@ -30,8 +30,8 @@ const features = [
 <section id="features" class="section features-section">
   <div class="container">
     <h2 class="section-title">
-      <span class="text-gradient">Powerful Features</span>
-      <span class="subtitle">Discover what makes Flametracer special</span>
+      <span class="text-gradient">Funções Principais</span>
+      <span class="subtitle">Descobre o que torna o Flametracer especial!</span>
     </h2>
 
     <div class="features-grid">
@@ -48,23 +48,25 @@ const features = [
 
     <div class="feature-showcase">
       <div class="feature-showcase-content">
-        <h3>Advanced Physics Engine</h3>
+        <h3>🗺️ O Mapa da FlameTracer</h3>
         <p>
-          Our proprietary physics engine simulates the complex behavior of fire
-          with unprecedented realism. Watch as flames react to wind, obstacles,
-          and other environmental factors just like real fire.
+         O mapa interativo da FlameTracer é o coração da aplicação.
+        Com uma interface clara e intuitiva, permite-te visualizar, em tempo real, todos os incêndios ativos em Portugal. 
+        Alimentado por dados oficiais e atualizado automaticamente, o mapa ajuda-te a compreender a situação no terreno com apenas alguns toques.
         </p>
         <ul class="feature-list">
-          <li>Realistic flame movement and particle effects</li>
-          <li>Dynamic light casting and shadow simulation</li>
-          <li>Environmental interaction with physical objects</li>
-          <li>Optimized performance for mobile devices</li>
+          <li>🔥 Fogo ativo: indica um incêndio em progresso.</li>
+          <li>✅ Fogo dominado: incêndio controlado, mas ainda monitorizado.</li>
+          <li>❌ Fogo extinto: incêndio concluído, sem risco atual.</li>
+          <li>🚒 Meios no terreno: mostra se há bombeiros, aviões ou helicópteros na zona.</li>
+          <li>⚠️ Zona de risco elevado: destaca áreas propensas a reacendimentos ou com vegetação seca.</li>
+          <li>📍 A minha localização: um ponto azul marca a tua posição no mapa, para veres o que está à tua volta.</li>
         </ul>
       </div>
 
       <div class="feature-showcase-image">
         <img
-          src="https://images.pexels.com/photos/1074505/pexels-photo-1074505.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+          src="assets/featuresimg.png"
           alt="Advanced Physics Demo"
         />
       </div>
