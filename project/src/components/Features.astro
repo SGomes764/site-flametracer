@@ -1,7 +1,7 @@
 ---
 const features = [
   {
-    title: " Incêndios em Tempo Real",
+    title: "Incêndios em Tempo Real",
     description:
       "Recebe informações atualizadas sobre incêndios ativos com dados oficiais e localização precisa no mapa.",
     icon: "🔥",
@@ -50,9 +50,9 @@ const features = [
       <div class="feature-showcase-content">
         <h3>🗺️ O Mapa do FlameTracer</h3>
         <p>
-         O mapa interativo do FlameTracer é o coração da aplicação.
-        Com uma interface clara e intuitiva, permite-te visualizar, em tempo real, todos os incêndios ativos em Portugal. 
-        Alimentado por dados oficiais e atualizado automaticamente, o mapa ajuda-te a compreender a situação no terreno com apenas alguns toques.
+          O mapa interativo do FlameTracer é o coração da aplicação.
+          Com uma interface clara e intuitiva, permite-te visualizar, em tempo real, todos os incêndios ativos em Portugal. 
+          Alimentado por dados oficiais e atualizado automaticamente, o mapa ajuda-te a compreender a situação no terreno com apenas alguns toques.
         </p>
         <ul class="feature-list">
           <li>🔥 Fogo ativo: indica um incêndio em progresso.</li>
@@ -235,7 +235,9 @@ const features = [
   }
 
   .feature-showcase-image img {
-    width: 100%;
+    width: 100%; /* Mantém responsividade */
+    max-width: 500px; /* Limita a largura máxima */
+    height: auto; /* Mantém a proporção */
     border-radius: var(--border-radius-lg);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
     transition: transform var(--transition-medium);
@@ -259,11 +261,19 @@ const features = [
     .feature-showcase-image {
       order: 0;
     }
+
+    .feature-showcase-image img {
+      max-width: 100%; /* Ocupa toda a largura em telas menores */
+    }
   }
 
   @media (max-width: 576px) {
     .features-grid {
       grid-template-columns: 1fr;
+    }
+
+    .feature-showcase-image img {
+      max-width: 100%; /* Ajuste para telas muito pequenas */
     }
   }
 </style>

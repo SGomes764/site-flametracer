@@ -1,4 +1,3 @@
-
 <section id="about" class="section about-section">
   <div class="container">
     <div class="about-content">
@@ -27,21 +26,6 @@
           O nome "FlameTracer" reflete exatamente isso — uma ferramenta que “segue o rasto” das chamas, antecipando perigos e ajudando a manter a segurança de todos.
           Mais do que um projeto escolar, a FlameTracer representa a ambição de dois jovens que quiseram aplicar o que aprenderam ao longo do curso para resolver um problema real. E esta é só a primeira chama de algo muito maior.
         </p>
-
-        <div class="stats">
-          <div class="stat-item fade-in" data-delay="0">
-            <span class="stat-number">50,000+</span>
-            <span class="stat-label">Utilizadores Ativos</span>
-          </div>
-          <div class="stat-item fade-in" data-delay="100">
-            <span class="stat-number">4.8</span>
-            <span class="stat-label">Avaliação da App</span>
-          </div>
-          <div class="stat-item fade-in" data-delay="200">
-            <span class="stat-number">1+</span>
-            <span class="stat-label">Idade</span>
-          </div>
-        </div>
       </div>
 
       <div class="about-image fade-in" data-delay="300">
@@ -86,7 +70,7 @@
 
   .about-content {
     display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
+    grid-template-columns: 1.2fr 0.8fr; /* Texto (60%) à esquerda, imagens (40%) à direita */
     gap: var(--space-5);
     align-items: center;
     position: relative;
@@ -145,7 +129,7 @@
     display: flex;
     gap: var(--space-2);
     width: 100%;
-    max-width: 600px; /* Increased from 500px to make images larger */
+    max-width: 600px;
   }
 
   .team-image {
@@ -164,16 +148,16 @@
 
   @media (max-width: 992px) {
     .about-content {
-      grid-template-columns: 1fr;
+      grid-template-columns: 1fr; /* Uma única coluna em telas menores */
       gap: var(--space-4);
     }
 
     .about-image {
-      order: -1;
+      order: 2; /* Imagens vão para baixo do texto */
     }
 
     .image-container {
-      max-width: 600px; /* Increased from 500px to make images larger */
+      max-width: 600px;
       margin: 0 auto;
     }
 
@@ -210,9 +194,8 @@
 
     .team-image {
       width: 100%;
-      max-width: 350px; /* Increased from 300px for larger images on mobile */
+      max-width: 350px;
       margin: 0 auto;
     }
   }
 </style>
-```
