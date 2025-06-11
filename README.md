@@ -1,7 +1,8 @@
 # Website FlameTracer
 
 ### Description
-This is the official repository for FlameTracer, an Android app to map both wild and urban fires, in Portugal. The project is made publicly available to showcase its functionality and design. However, the code is proprietary, and all rights are reserved.
+This is the official repository for FlameTracer Promocional Website.
+FlameTracer is an Android app to map both wild and urban fires, in Portugal. The project is made publicly available to showcase its functionality and design. However, the code is proprietary, and all rights are reserved.
 
 ## License (English)
 Copyright © FlameTracer 2025. All Rights Reserved.
